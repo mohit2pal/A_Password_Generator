@@ -12,17 +12,18 @@ def asi(m,n):
       global pass_new
       pass_new = pass_new + n[asi]
       
-def generate():
-  x=input('Enter your name')
-  y=int(input('Enter your age'))
-  z=input('Enter your passion')
-  adj=input('Enter a master password')
+def generate(x,y,z):
+#   x=input('Enter your name')
+#   y=int(input('Enter your age'))
+#   z=input('Enter your passion')
+#   adj=input('Enter a master password')
   global pass_new
   asi(x,x_choice)
-  pass_new= pass_new + y_choice[y]
+  y2 =int(y)
+  pass_new= pass_new + y_choice[y2]
   asi(z,z_choice)
+  return (pass_new)
 
-  print(pass_new)
+#   print(pass_new)
   
   
-generate()
