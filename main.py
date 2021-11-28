@@ -46,14 +46,17 @@ def fid(pastwd):
         pwnd_dict[pwnd_hash[0]] = pwnd_hash[1]
         
     if sha_rest in pwnd_dict.keys():
-        print("password found")
+        return('found')
     else:
-        print("woohoo")
+        return('woohoo')
         
 
 
-fid(pass_new)
-    
+fid_result = fid(pass_new)
+if(fid_result == 'found'):
+    print('Namaste found')
+elif(fid_result == 'woohoo'):
+     print('Namaste')   
     
     
     
