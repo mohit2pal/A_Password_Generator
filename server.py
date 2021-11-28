@@ -2,6 +2,7 @@ from flask import Flask, render_template,redirect
 from flask import request
 from forms import *
 from generator import *
+from checker import *
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'levitation'
@@ -15,6 +16,11 @@ def index():
         passion2 = request.form['passion']
         master_password2 = request.form['master_password']
         pass_new2 = generate(name2, age2, passion2)
+        check_return = fid(pass_new2)
+        if(check_return == 'found'):
+            print('found')
+        elif(check_return == 'woohoo'):
+            print('Not Found')
         return render_template('output.html', nameh=pass_new2)
     return render_template('index.html', form=form)
 
