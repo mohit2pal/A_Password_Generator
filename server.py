@@ -13,8 +13,12 @@ z_choice = "12039120938210948214294872198472140172!*(#&!*&!&#^!&#!#!(#^!)#)!#!)#
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'password'
 
-@app.route('/', methods=['GET', 'POST'])
-def index():
+@app.route('/')
+def home():
+    return render_template('home.html')
+
+@app.route('/gene', methods=['GET', 'POST'])
+def gene():
     form = SignUpForm()
     if form.is_submitted():
         name2 = request.form['name']
