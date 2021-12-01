@@ -52,9 +52,22 @@ def rember():
         m = int(master)
         print(master)
         print(m)
+        m1= (m*3)-2
+        m2= (m*3)-1
+        m3= (m*3)
+        t = 0
         f = open('1.txt', 'r')
         for x in f:
-            pass
+            if(t == m1):
+                x_choice2 = x
+            elif(t == m2):
+                y_choice2 = x
+            elif( t == m3):
+                z_choice2 = x
+            t+=1
+        f.close()
+        pass_new2 = generate(name2, age2, passion2, x_choice2, y_choice2, z_choice2)
+        return render_template('output.html', nameh=pass_new2)
     return render_template('index2.html', form=form)
 
 if __name__ == '__main__':
