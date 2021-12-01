@@ -40,5 +40,17 @@ def gene():
         return render_template('output.html', nameh=pass_new2)
     return render_template('index.html', form=form)
 
+@app.route('/rember', methods=['GET', "POST"])
+def rember():
+    form = SignUpForm()
+    if form.is_submitted():
+        name2 = request.form['name']
+        age2 = request.form['age']
+        passion2 = request.form['passion']
+        master_password2 = request.form['master_password']
+        master = master_password2[2:4]
+        print(master)
+    return render_template('index2.html', form=form)
+
 if __name__ == '__main__':
     app.run()
