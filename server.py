@@ -49,7 +49,12 @@ def rember():
         passion2 = request.form['passion']
         master_password2 = request.form['master_password']
         master = master_password2[2:4]
+        m = int(master)
         print(master)
+        print(m)
+        f = open('1.txt', 'r')
+        for x in f:
+            pass
     return render_template('index2.html', form=form)
 
 if __name__ == '__main__':
