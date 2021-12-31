@@ -6,4 +6,4 @@ WORKDIR /code
 
 RUN pip install -r requirements.txt
 
-CMD ["python","server.py"]
+ENTRYPOINT ["python","server.py"]
