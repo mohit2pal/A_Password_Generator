@@ -1,4 +1,4 @@
-FROM continuumio/anaconda3:2020.11
+FROM python:3.9-alpine3.15
 
 ADD . /code
 
@@ -6,4 +6,4 @@ WORKDIR /code
 
 RUN pip install -r requirements.txt
 
-ENTRYPOINT [ "python","server.py" ]
+ENTRYPOINT ["python", "server.py"]
