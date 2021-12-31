@@ -72,5 +72,5 @@ def rember():
     return render_template('index2.html', form=form)
 
 if __name__ == '__main__':
-    # port = os.environ.get("PORT", 5000)
-    app.run(host='0.0.0.0', port=80)
+    port = os.environ.get("PORT")
+    app.run(debug=False, host='0.0.0.0', port=port)
