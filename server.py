@@ -6,6 +6,7 @@ from checker import *
 from shuffle import *
 from creat import *
 from master_pass import *
+import os
 
 x_choice = "qwertyuioplkjhgfdazxvbnm,./;;'['']][[>:>?{}{}\[-0909876531@!@#$%^*()--==9&^&%$@!!QWE45TVTBUM<O>??|\(*^7t^&55RE$%56954655494654987*/*+26!###^&)"
 y_choice = "QWERTYUIOPASDFGHJZXCVBNMqwertyuiopasdfghklzcbnm1213456789064fds64r645454e65454466584674656634846538543454345454356'.;;.]/';303-923928782736333+*/3-3-3+2362+329+3/2*3/2+38+2398"
@@ -14,7 +15,7 @@ z_choice = "12039120938210948214294872198472140172!*(#&!*&!&#^!&#!#!(#^!)#)!#!)#
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'password'
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def home():
     return render_template('home.html')
 
@@ -71,4 +72,5 @@ def rember():
     return render_template('index2.html', form=form)
 
 if __name__ == '__main__':
-    app.run()
+    port = os.environ.get("PORT", 5000)
+    app.run(debug=False, host="0.0.0.0", port=port)
