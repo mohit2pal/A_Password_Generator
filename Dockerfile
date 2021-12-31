@@ -1,9 +1,9 @@
-FROM python:3.9-alpine3.15
+FROM python:3.6.1-alpine
 
-ADD . /code
+ADD . /a_password_generator
 
-WORKDIR /code
+WORKDIR /a_password_generator
 
 RUN pip install -r requirements.txt
 
-ENTRYPOINT ["python", "server.py"]
+CMD ["python", "app.py"]
