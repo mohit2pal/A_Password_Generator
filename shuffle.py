@@ -17,3 +17,4 @@ def shuffl(tem):
       x_choicenew= x_choicenew + i
   
   return(x_choicenew)
+# new new new
