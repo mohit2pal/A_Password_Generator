@@ -1,2 +1,2 @@
 # A_Password_Generator
- Generates Passwords for you
+ Generate Passwords for you
